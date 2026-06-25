@@ -48,7 +48,7 @@ export function NotificationsPage() {
         <NotificationFilter value={filter} onChange={handleFilterChange} />
       </Box>
 
-      {true && (
+      {loading && (
         <Box display="flex" justifyContent="center" py={6}>
           <CircularProgress />
         </Box>
@@ -62,7 +62,7 @@ export function NotificationsPage() {
         <Alert severity="info">Something message</Alert>
       )}
 
-      {loading && !error && notifications.length > 0 && (
+      {!loading && !error && notifications.length > 0 && (
         <Stack spacing={1.5}>
           {notifications.map((n) => (
             <></>

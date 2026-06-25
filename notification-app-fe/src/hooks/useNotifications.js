@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchNotifications } from "../apis/notifications";
+import { fetchNotifications } from "../api/notifications";
 
 export function useNotifications() {
   const [notifications, setNotifications] = useState([]);
@@ -12,9 +12,15 @@ export function useNotifications() {
     };
 
     load();
-  }, [notifications]);
+  }, []);
 
   const totalPages = 0;
 
-  return { notifications, total, totalPages, loading: false, error: true };
+  return {
+  notifications,
+  total,
+  totalPages,
+  loading: false,
+  error: null
+};
 }
